@@ -1,0 +1,79 @@
+body{
+    font: 20px;
+    font-family: 'Lucida Sans Regular';
+}
+.navbar{
+    background-color: #574839;
+}
+
+.margin{
+    padding-bottom: 50px;
+    padding-top: 20px;
+}
+
+.margin-smalltitle{
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.bg-servicos{
+    background-color: #F2F2F2;
+    color: #574839;
+}
+
+.bg-depoimentos{
+    background-color: #F2F2F2;
+    color: #574839;
+}
+
+.bg-produtos{
+    background-color: white;
+    color: #574839;
+}
+
+.bg-jornada{
+    background-color: white;
+    color: #574839;
+}
+
+.bg-footer{
+    background-color: #574839;
+    color: white;
+}
+
+.btn-compra {
+    color: #fff;
+    background-color: #81A453;
+    border-color: #81A453;
+  }
+  
+  .btn-compra:hover {
+    color: #fff;
+    background-color: #607a3e;
+    border-color: #607a3e;
+  }
+  
+  .btn-compra:focus, .btn-compra.focus {
+    color: #fff;
+    background-color: #81A453;
+    border-color: #607a3e;
+    box-shadow: 0 0 0 0.2rem rgba(50, 138, 50);
+  }
+  
+  .btn-compra.disabled, .btn-compra:disabled {
+    color: #fff;
+    background-color: #607a3e;
+    border-color: #607a3e;
+  }
+  
+  .btn-compra:not(:disabled):not(.disabled):active, .btn-compra:not(:disabled):not(.disabled).active,
+  .show > .btn-compra.dropdown-toggle {
+    color: #fff;
+    background-color: #6e8b47;
+    border-color: #607a3e;
+  }
+  
+  .btn-compra:not(:disabled):not(.disabled):active:focus, .btn-compra:not(:disabled):not(.disabled).active:focus,
+  .show > .btn-compra.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem #607a3e(50,138,50);
+  }
