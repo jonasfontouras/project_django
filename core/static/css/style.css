@@ -77,3 +77,8 @@ body{
   .show > .btn-compra.dropdown-toggle:focus {
     box-shadow: 0 0 0 0.2rem #607a3e(50,138,50);
   }
+
+galeriaproduct.title
+{
+    position: left;
+}

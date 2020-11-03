@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Ju Barradas</title>
+        <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light" id="menu">
+            <a class="navbar-brand" href="{% url 'core:index' %}">
+                <img src="{% static 'img/Logo Ju-01.png' %}" width="100" height="100">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                     <li class="nav-item">
+                         <a href="#servicos" class="nav-link    ">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                         <a href="{% url 'courses:courses' %}" class="nav-link">Cursos</a>
+                    </li>
+                     <li class="nav-item">
+                         <a href="#produtos" class="nav-link">Produtos</a>
+                    </li>
+                     <li class="nav-item">
+                         <a href="#depoimentos" class="nav-link">Depoimentos</a>
+                    </li>
+                     <li class="nav-item">
+                         <a href="#jornada" class="nav-link">Jornada</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        {% block content %}
+        {% endblock %}
+        <footer class="container-fluid bg-footer text-center">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="https://www.instagram.com/jubarradas_/" class="nav-link">Instagram</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://api.whatsapp.com/send?phone=555181658157&text=sua%20mensagem" class="nav-link">Whatsapp</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="malito:jubarradas@gmail.com?subject=Site" title="" class="nav-link">jubarradas@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </footer>
+    </body>
+</html>

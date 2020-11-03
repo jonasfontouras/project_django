@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% for course in courses %}
+    <div class="media bg-produtos margin" >
+        <img class="ml-3" src="{% static 'img/Logo Ju-01.png' %}" width="100px" height="100px" alt="Imagem de exemplo genérica">
+        <div class="media-body">
+            <h5>{{ course.name  }}</h5>
+            <p>{{ course.description }}</p>
+        </div>
+    </div>
+{% endfor %}
+{% endblock %}
