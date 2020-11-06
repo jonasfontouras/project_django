@@ -2,23 +2,16 @@
 {% load static %}
 {% block content %}
 
-{% for course in courses %}
     <div class="media bg-produtos margin" >
+
+        <div class="media-body">
+            <h5>{{ course.name  }}</h5>
+            <p>{{ course.description|linebreaks }}</p>
+        </div>
         {% if course.image %}
         <img class="ml-3" src="{{ course.image.url }}" width="100px" height="100px" alt="{{ course.name }}">
         {% else %}
         <img class="ml-3" src="{% static 'img/Logo Ju-01.png' %}" width="100px" height="100px" alt="{{ course.name }}">
         {% endif %}
-        <div class="media-body">
-            <h5>{{ course.name  }}</h5>
-            <p>{{ course.description|linebreaks }}</p>
-        </div>
     </div>
-{% empty %}
-<div class="media bg-produtos margin" >
-        <div class="media-body">
-            <p>Nenhum curso está disponível</p>
-        </div>
-    </div>
-{% endfor %}
 {% endblock %}

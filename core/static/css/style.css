@@ -82,3 +82,8 @@ galeriaproduct.title
 {
     position: left;
 }
+
+img {
+    padding-left: 10px;
+    padding-right: 10px;
+}

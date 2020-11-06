@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'core/base.html' %}
 {% load static %}
     {% block content %}
         <section id="servicos">
@@ -36,51 +36,18 @@
                 <h3 class="margin">Produtos</h3>
                 <div class="container">
                     <div class="row">
+                        {% for product in products %}
                         <div class="col-lg-2">
-                            <img src="{% static 'produtos/IMG-20201001-WA0026-removebg-preview.png' %}" width="100%">
+                            {% if product.image %}
+                            <img src="{{ product.image.url }}" alt="{{ product.name }}" width="100%">
+                            {% else %}
+                            <img src="{% static 'produtos/IMG-20201001-WA0026-removebg-preview.png' %}" alt="{{ product.name }}" width="100%">
+                            {% endif %}
+                            <h4>{{ product.name }}</h4>
+                            <p>{{ product.description }}</p>
                             <button class="btn btn-compra">Comprar</button>
                         </div>
-                        <div class="col-lg-2">
-                            <img src="{% static 'produtos/IMG-20201001-WA0026-removebg-preview.png' %}" width="100%">
-                            <button class="btn btn-compra">Comprar</button>
-                        </div>
-                        <div class="col-lg-2">
-                            <img src="{% static 'produtos/IMG-20201001-WA0026-removebg-preview.png' %}" width="100%">
-                            <button class="btn btn-compra">Comprar</button>
-                        </div>
-                        <div class="col-lg-2">
-                            <img src="{% static 'produtos/IMG-20201001-WA0026-removebg-preview.png' %}" width="100%">
-                            <button class="btn btn-compra">Comprar</button>
-                        </div>
-                        <div class="col-lg-2">
-                            <img src="{% static 'produtos/IMG-20201001-WA0026-removebg-preview.png' %}" width="100%">
-                            <button class="btn btn-compra">Comprar</button>
-                        </div>
-                        <div class="col-lg-2">
-                            <img src="{% static 'produtos/IMG-20201001-WA0026-removebg-preview.png' %}" width="100%">
-                            <button class="btn btn-compra">Comprar</button>
-                        </div>
-                        <div class="col-lg-2">
-                            <img src="{% static 'produtos/IMG-20201001-WA0026-removebg-preview.png' %}" width="100%">
-                            <button class="btn btn-compra">Comprar</button>
-                        </div>
-                        <div class="col-lg-2">
-                            <img src="{% static 'produtos/IMG-20201001-WA0026-removebg-preview.png' %}" width="100%">
-                            <button class="btn btn-compra">Comprar</button>
-                        </div>
-                         <div class="col-lg-2">
-                            <img src="{% static 'produtos/IMG-20201001-WA0026-removebg-preview.png' %}" width="100%">
-                            <button class="btn btn-compra">Comprar</button>
-                        </div>
-                        <div class="col-lg-2">
-                            <img src="{% static 'produtos/IMG-20201001-WA0026-removebg-preview.png' %}" width="100%">
-                            <button class="btn btn-compra">Comprar</button>
-                        </div>
-                        <div class="col-lg-2">
-                            <img src="{% static 'produtos/IMG-20201001-WA0026-removebg-preview.png' %}" width="100%">
-                            <button class="btn btn-compra">Comprar</button>
-                        </div>
-
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -93,7 +60,7 @@
                       <div class="col-lg-4">
                           <h4>Jonas</h4>
                           <h5>Programador</h5>
-                          <p>Amo minha namorada e ela manda muito bem no que faz!</p>
+                          <p>Boa terapeuta, manda muito bem no que faz!</p>
                           <img src="{% static 'img-depoimentos/WIN_20200524_09_59_04_Pro (3).jpg' %}" width="100%">
                       </div>
                       <div class="col-lg-4">

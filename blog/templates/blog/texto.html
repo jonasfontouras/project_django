@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="media bg-produtos margin" >
+        <div align="center" class="media-body">
+            {% if blog.image %}
+                <img class="ml-3" src="{{ blog.image.url }}" width="300px" height="300px" alt="{{ blog.name }}">
+            {% else %}
+                <img class="ml-3" src="{% static 'img/Logo Ju-01.png' %}" width="300px" height="300px" alt="{{ blog.title }}">
+            {% endif %}
+            <h5>{{ blog.title  }}</h5>
+            <p>{{ blog.introduction }}</p>
+            <p>{{ blog.id }}</p>
+        </div>
+    </div>
+{% endblock %}
