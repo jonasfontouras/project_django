@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Blog
 
 
@@ -12,8 +12,8 @@ def blog(request):
     return render(request, template_name, context)
 
 
-def texto(request, pk):
-    blog = Blog.objects.get(pk=pk)
+def texto(request, slug):
+    blog = get_object_or_404(Blog, slug=slug)
     context = {
         'blog': blog
     }

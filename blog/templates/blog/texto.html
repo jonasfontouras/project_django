@@ -10,8 +10,7 @@
                 <img class="ml-3" src="{% static 'img/Logo Ju-01.png' %}" width="300px" height="300px" alt="{{ blog.title }}">
             {% endif %}
             <h5>{{ blog.title  }}</h5>
-            <p>{{ blog.introduction }}</p>
-            <p>{{ blog.id }}</p>
+            <p>{{ blog.description|linebreaks }}</p>
         </div>
     </div>
 {% endblock %}

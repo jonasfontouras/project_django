@@ -1,106 +1,109 @@
 {% extends 'core/base.html' %}
 {% load static %}
-    {% block content %}
-        <section id="servicos">
-            <div class="container-fluid text-center margin bg-servicos">
-                <h3 class="margin">Serviços</h3>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 margin">
-                            <h5>Consulta</h5>
-                            <p>R$170,00</p>
-                            <p>1 sessão</p>
-                        </div>
-                        <div class="col-lg-6 margin">
-                            <h5>Mentoria Detox</h5>
-                            <p>R$1250,00</p>
-                            <p>8 sessões</p>
-                        </div>
-                        <div class="col-lg-6 margin">
-                            <h5>Mentoria Terapeutica</h5>
-                            <p>R$620,00</p>
-                            <p>5 sessões</p>
-                        </div>
-                        <div class="col-lg-6">
-                            <h5>Yoga</h5>
-                            <p>R$100,00 - 1x semana</p>
-                            <p>R$150,00 - 2x semana</p>
-                            <p>R$180,00 - 3x semana</p>
-                        </div>
-                    </div>
+{% block content %}
+<section id="servicos">
+    <div class="container-fluid text-center margin bg-servicos">
+        <h3 class="margin">Serviços</h3>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 margin">
+                    <h5>Consulta</h5>
+                    <p>R$170,00</p>
+                    <p>1 sessão</p>
+                </div>
+                <div class="col-lg-6 margin">
+                    <h5>Mentoria Detox</h5>
+                    <p>R$1250,00</p>
+                    <p>8 sessões</p>
+                </div>
+                <div class="col-lg-6 margin">
+                    <h5>Mentoria Terapeutica</h5>
+                    <p>R$620,00</p>
+                    <p>5 sessões</p>
+                </div>
+                <div class="col-lg-6">
+                    <h5>Yoga</h5>
+                    <p>R$100,00 - 1x semana</p>
+                    <p>R$150,00 - 2x semana</p>
+                    <p>R$180,00 - 3x semana</p>
                 </div>
             </div>
-        </section>
-        <section id="produtos">
-            <div class="container-fluid text-center margin bg-produtos">
-                <h3 class="margin">Produtos</h3>
-                <div class="container">
-                    <div class="row">
-                        {% for product in products %}
-                        <div class="col-lg-2">
-                            {% if product.image %}
-                            <img src="{{ product.image.url }}" alt="{{ product.name }}" width="100%">
-                            {% else %}
-                            <img src="{% static 'produtos/IMG-20201001-WA0026-removebg-preview.png' %}" alt="{{ product.name }}" width="100%">
-                            {% endif %}
-                            <h4>{{ product.name }}</h4>
-                            <p>{{ product.description }}</p>
-                            <button class="btn btn-compra">Comprar</button>
-                        </div>
-                        {% endfor %}
-                    </div>
+        </div>
+    </div>
+</section>
+<section id="produtos">
+    <div class="container-fluid text-center margin bg-produtos">
+        <h3 class="margin">Produtos</h3>
+        <div class="container">
+            <div class="row">
+                {% for product in products %}
+                <div class="col-lg-2">
+                    {% if product.image %}
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" width="100%">
+                    {% else %}
+                    <img src="{% static 'produtos/IMG-20201001-WA0026-removebg-preview.png' %}" alt="{{ product.name }}"
+                         width="100%">
+                    {% endif %}
+                    <h4>{{ product.name }}</h4>
+                    <p>{{ product.description }}</p>
+                    <a class="btn btn-compra" href="{{ product.teste }}">Compra</a>
                 </div>
+                {% endfor %}
             </div>
-        </section>
-      <section id="depoimentos">
-          <div class="container-fluid text-center margin bg-depoimentos">
-              <h3 class="margin">Depoimentos</h3>
-              <div class="container">
-                  <div class="row">
-                      <div class="col-lg-4">
-                          <h4>Jonas</h4>
-                          <h5>Programador</h5>
-                          <p>Boa terapeuta, manda muito bem no que faz!</p>
-                          <img src="{% static 'img-depoimentos/WIN_20200524_09_59_04_Pro (3).jpg' %}" width="100%">
-                      </div>
-                      <div class="col-lg-4">
-                          <h4>Bruna</h4>
-                          <h5>Psicologa</h5>
-                          <p>Descrição de depoimento feita por Bruna. teste teste </p>
-                          <img src="{% static 'img-depoimentos/bruna.PNG' %}" width="100%">
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </section>
-        <section id="jornada">
-            <div class="container-fluid text-center margin bg-jornada">
-                <h3 class="margin">Jornada</h3>
-                <img src="{% static 'img/sobre.PNG' %}" class="rounded-circle" weidth="200px" height="200px">
-                <h5 class="margin-smalltitle">Juliana Barradas</h5>
-                <h6 class="margin-smalltitle"><b>Experiência no exterior</b></h6>
-                <p>Formada em Consultoria de Estilo de Vida Ayurvédico
-                    pela Ayurveda College, na Austrália.</p>
-                <p>Certificada em Reiki Nível III, 
-                    pela Rainbow Lantern, na Austrália.</p>
-                
-                    <h6 class="margin-smalltitle"><b>De volta ao Brasil</b></h6>
-                <p>Após 10 anos de vivência no exterior, regressou
-                    ao Brasil trabalhando como Terapeuta e Educadora
-                    na Escola de Ayurveda, levando seu conhecimento
-                    para vários Estados brasileiros</p>
-                <p>Fez curso de Aromaterapia - Base para práticas,
-                    pela Vishwa Aroma.</p>
-                <p>Cursou Numerologia Tântrica com o professor
-                    e Instrutor de Yoga Akal Muret Singh;</p>
-                <p>Fez formação em Coaching Ontológico,
-                    Com o método IKIGAI, pelo Instituto Próspera.</p>
-                <h6 class="margin-smalltitle"><b>Atualmente:</b></h6>
-                <p> Estuda Tantra Yoga no Curso de Formação
-                    de Instrutores, na Escola Anadam Yoga e Cultura
-                    Terapeuta Holística, com base em Ayurveda e Yoga.
-                    Ministra cursos e workshops com foco na saúde, 
-                    bem-estar, prevenção de doenças e autoconhecimento.</p>
+        </div>
+    </div>
+</section>
+<section id="depoimentos">
+    <ul class="list-unstyled margin bg-depoimentos">
+        <li class="media">
+            <img src="{% static 'img-depoimentos/bruna.PNG' %}" height="200px" width="200px">
+            <div class="media-body">
+                <h5 class="mt-0 mb-1">Bruna</h5>
+                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                    Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
+                    nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
             </div>
-        </section>
-    {% endblock %}
+        </li>
+        <li class="media my-4">
+            <div class="media-body">
+                <h5 class="mt-0 mb-1 " align="right">Jonas</h5>
+                <p align="right">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                    sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
+                    condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+            </div>
+            <img src="{% static 'img-depoimentos/WIN_20200524_09_59_04_Pro (3).jpg' %}" height="200px"
+                 width="200px">
+        </li>
+    </ul>
+</section>
+<section id="jornada">
+    <div class="container-fluid text-center margin bg-jornada">
+        <h3 class="margin">Jornada</h3>
+        <img src="{% static 'img/sobre.PNG' %}" class="rounded-circle" weidth="200px" height="200px">
+        <h5 class="margin-smalltitle">Juliana Barradas</h5>
+        <h6 class="margin-smalltitle"><b>Experiência no exterior</b></h6>
+        <p>Formada em Consultoria de Estilo de Vida Ayurvédico
+            pela Ayurveda College, na Austrália.</p>
+        <p>Certificada em Reiki Nível III,
+            pela Rainbow Lantern, na Austrália.</p>
+
+        <h6 class="margin-smalltitle"><b>De volta ao Brasil</b></h6>
+        <p>Após 10 anos de vivência no exterior, regressou
+            ao Brasil trabalhando como Terapeuta e Educadora
+            na Escola de Ayurveda, levando seu conhecimento
+            para vários Estados brasileiros</p>
+        <p>Fez curso de Aromaterapia - Base para práticas,
+            pela Vishwa Aroma.</p>
+        <p>Cursou Numerologia Tântrica com o professor
+            e Instrutor de Yoga Akal Muret Singh;</p>
+        <p>Fez formação em Coaching Ontológico,
+            Com o método IKIGAI, pelo Instituto Próspera.</p>
+        <h6 class="margin-smalltitle"><b>Atualmente:</b></h6>
+        <p> Estuda Tantra Yoga no Curso de Formação
+            de Instrutores, na Escola Anadam Yoga e Cultura
+            Terapeuta Holística, com base em Ayurveda e Yoga.
+            Ministra cursos e workshops com foco na saúde,
+            bem-estar, prevenção de doenças e autoconhecimento.</p>
+    </div>
+</section>
+{% endblock %}

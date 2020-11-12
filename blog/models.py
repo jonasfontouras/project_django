@@ -13,7 +13,7 @@ class BlogManager(models.Manager):
 class Blog(models.Model):
     title = models.CharField('Título', max_length=100)
     slug = models.SlugField('Atalho')
-    introduction = models.TextField('Introducão', blank=True)
+    introduction = models.TextField('Introducão', blank=True, max_length=200)
     text = models.TextField('Texto', blank=True)
     image = models.ImageField(upload_to='blog/images', verbose_name='Imagem', null=True, blank=True)
     created_at = models.DateTimeField('Criado em', auto_now_add=True)

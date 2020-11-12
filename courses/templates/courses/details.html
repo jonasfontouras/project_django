@@ -1,17 +1,16 @@
 {% extends 'core/base.html' %}
 {% load static %}
 {% block content %}
-
     <div class="media bg-produtos margin" >
-
-        <div class="media-body">
-            <h5>{{ course.name  }}</h5>
+        <div align="justify" class="media-body">
+            <h5 align="center">{{ course.name  }}</h5>
             <p>{{ course.description|linebreaks }}</p>
         </div>
         {% if course.image %}
-        <img class="ml-3" src="{{ course.image.url }}" width="100px" height="100px" alt="{{ course.name }}">
+        <img class="ml-3" src="{{ course.image.url }}" width="200px" height="200px" alt="{{ course.name }}">
         {% else %}
-        <img class="ml-3" src="{% static 'img/Logo Ju-01.png' %}" width="100px" height="100px" alt="{{ course.name }}">
+        <img class="ml-3" src="{% static 'img/Logo Ju-01.png' %}" width="260px" height="260px" alt="{{ course.name }}">
         {% endif %}
     </div>
+
 {% endblock %}

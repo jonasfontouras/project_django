@@ -21,6 +21,11 @@ body{
     color: #574839;
 }
 
+.bg-cursos{
+    background-color: #F2F2F2;
+    color: #574839;
+}
+
 .bg-depoimentos{
     background-color: #F2F2F2;
     color: #574839;
@@ -86,4 +91,8 @@ galeriaproduct.title
 img {
     padding-left: 10px;
     padding-right: 10px;
+}
+
+div.margin-form{
+    margin-left: 80%;
 }
